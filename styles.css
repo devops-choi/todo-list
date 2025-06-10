@@ -1,0 +1,290 @@
+/* 기본 배경 및 레이아웃 */
+body {
+  background: #f3f4f6;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', 'Malgun Gothic', Arial, sans-serif;
+  display: flex;
+}
+
+body.dark {
+  background: #18181b;
+}
+
+.sidebar {
+  width: 260px;
+  background: #23272f;
+  color: #f3f4f6;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.7rem;
+}
+
+.sidebar button {
+  width: 100%;
+  background: #374151;
+  color: #f3f4f6;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 0.2rem;
+  transition: background 0.2s;
+}
+
+.sidebar button:hover {
+  background: #60a5fa;
+  color: #23272f;
+}
+
+.main-board {
+  flex: 1;
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.todo-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2563eb;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+#todo-form {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#todo-input, #category-input, #deadline-input, #priority-input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+#todo-form button[type="submit"] {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#todo-form button[type="submit"]:hover {
+  background: #2563eb;
+}
+
+#motivation {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1.05em;
+  color: #10b981;
+  text-align: center;
+}
+
+#goal-section {
+  margin-top: 1rem;
+}
+
+#goal-input {
+  width: 60%;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#set-goal-btn {
+  margin-left: 0.5rem;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+
+#progress-bar-container {
+  width: 100%;
+  background: #374151;
+  border-radius: 8px;
+  height: 16px;
+  margin: 8px 0;
+}
+
+#progress-bar {
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 8px;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+#progress-text {
+  font-size: 0.95em;
+  margin-left: 8px;
+}
+
+.card-board {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex: 1;
+  min-height: 350px;
+}
+
+.card-column {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  flex: 1;
+  padding: 1.2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.card-column h2 {
+  font-size: 1.15rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+#todo-list, #done-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+#todo-list li, #done-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+  min-height: 48px;
+}
+
+#todo-list li.high, #done-list li.high {
+  border-left: 6px solid #f59e42;
+}
+
+#todo-list li.urgent, #done-list li.urgent {
+  border-left: 6px solid #ef4444;
+}
+
+#todo-list li.low, #done-list li.low {
+  border-left: 6px solid #60a5fa;
+}
+
+#todo-list li .deadline, #done-list li .deadline {
+  font-size: 0.85em;
+  color: #ef4444;
+  margin-left: 8px;
+}
+
+#todo-list li .category, #done-list li .category {
+  font-size: 0.85em;
+  color: #6366f1;
+  margin-left: 8px;
+}
+
+#todo-list li .completed, #done-list li .completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toggle-complete {
+  color: #22c55e;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.toggle-complete:hover {
+  color: #15803d;
+}
+
+.delete-todo {
+  color: #ef4444;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.delete-todo:hover {
+  color: #b91c1c;
+}
+
+#history-section {
+  margin-top: 2rem;
+}
+
+#history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#history-list li {
+  font-size: 0.95em;
+  color: #6b7280;
+  margin-bottom: 0.3em;
+}
+
+#todo-list li.dragging, #done-list li.dragging {
+  opacity: 0.5;
+}
+
+.sidebar.dark, .main-board.dark, .card-column.dark {
+  background: #23272f !important;
+  color: #f3f4f6 !important;
+}
+
+.card-column.dark h2 {
+  color: #fbbf24 !important;
+}
+
+.todo-title.dark {
+  color: #fbbf24;
+}

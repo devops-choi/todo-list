@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TODO LIST</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>메뉴</h2>
+    <ul>
+      <li><button id="all-tasks-btn">전체 할 일</button></li>
+      <li><button id="today-tasks-btn">오늘 할 일</button></li>
+      <li><button id="history-btn">완료 기록</button></li>
+      <li><button id="theme-toggle" type="button">🌙 다크모드</button></li>
+    </ul>
+    <div id="motivation" class="motivation"></div>
+    <div id="goal-section">
+      <input id="goal-input" type="number" min="1" placeholder="오늘 목표 개수" />
+      <button id="set-goal-btn" type="button">목표설정</button>
+      <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <span id="progress-text"></span>
+    </div>
+  </div>
+  <div class="main-board">
+    <h1 class="todo-title">TODO LIST</h1>
+    <form id="todo-form">
+      <input id="todo-input" type="text" placeholder="할 일을 입력하세요..." required />
+      <select id="priority-input">
+        <option value="보통">보통</option>
+        <option value="높음">높음</option>
+        <option value="긴급">긴급</option>
+      </select>
+      <input id="deadline-input" type="datetime-local" />
+      <input id="category-input" type="text" placeholder="카테고리/태그(쉼표구분)" />
+      <button type="submit">추가</button>
+    </form>
+    <div class="card-board">
+      <div class="card-column" id="todo-column">
+        <h2>할 일</h2>
+        <ul id="todo-list"></ul>
+      </div>
+      <div class="card-column" id="done-column">
+        <h2>완료</h2>
+        <ul id="done-list"></ul>
+      </div>
+    </div>
+    <div id="history-section" style="display:none">
+      <h2>완료 기록</h2>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
